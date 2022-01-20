@@ -1,0 +1,140 @@
+.div-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page{
+    padding-bottom: 30px;
+}
+.dashboard-heading{
+    font-family: Konnect;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    letter-spacing: 0.65em;
+    color: #106894;
+}
+.dashboard-card{
+    padding: 30px 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 50px -3px rgba(204, 117, 73, 0.2);
+}
+.heading1{
+    font-family: Konnect;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 63px;
+    color: #000000;
+}
+.text1{
+    font-family: Konnect;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    color: #000000;
+}
+.dashboard-btn{
+    font-family: Konnect;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #CC7549;
+}
+.text2{
+    font-family: Konnect;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    opacity: 0.3;
+}
+.text3{
+    font-family: Konnect;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+.category-file{
+    background: #FFFFFF;
+    border: 2px dashed #CC7549;
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: 0px 20px 50px -3px rgba(204, 117, 73, 0.2);
+}
+.form-label{
+    font-family: Konnect;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+}
+.form-control,.form-select{
+   box-shadow: none!important;
+   min-height: 45px;
+   outline: none;
+   border: none;
+   transition: none;
+}
+.form-control:focus,.form-select{
+    box-shadow: none!important;
+    outline: none;
+    border: none;
+    transition: none;
+}
+.form-check{
+    display: flex;
+    align-items: center;
+}
+.form-check-input[type=checkbox]{
+   height: 30px;
+   width:  30px;
+   border: 1px solid #000000;
+}
+.form-check-input:focus{
+    box-shadow: none;
+}
+.form-check-input:checked[type=checkbox] {
+    background-image: url('../assets/checkbox.png')!important;
+    background-size: 20px;
+}
+.form-check-input:checked{
+   background-color: white!important;
+   color: white!important;
+   border: 1px solid #000000;
+   box-shadow: none;
+}
+.btn1{
+    background: #CC7549;
+    font-family: Konnect;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    color: #FFFFFF;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+.btn1:focus{
+    box-shadow: none!important;
+}
+.modal-content{
+    background: #E5E5E5!important;
+}
+/* .btn1:hover{
+    background: #CC7549;
+    color: #FFFFFF;
+    border: none;
+    box-shadow: none;
+    transition: none;
+} */
