@@ -67,7 +67,7 @@ function Home() {
                                                 <td className='product-feature-text'>{row.username}</td>
                                                 <td className='product-feature-text'>{row.telephone}</td>
                                                 <td className='product-feature-text'>
-                                                    <Button onClick={() => handleDeleteUser(row.pid)}
+                                                    <Button onClick={() => handleDeleteUser(row.uid)}
                                                         style={{ background: 'white', color: '#113B6B', fontWeight: '600', border: 'none', boxShadow: 'none' }}>
                                                         <img src={DeleteImg} ></img></Button>
                                                 </td>
