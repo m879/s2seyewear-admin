@@ -42,7 +42,7 @@ function Home() {
                                 allOrder.map((row) => (
                                     <Card className='dashboard-card mt-4 p-4'>
                                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                            <p className='mb-0'>Order ID : <strong>{row.uid}</strong></p>
+                                            <p className='mb-0'>Order ID : <strong>{row.oid}</strong></p>
                                             {/* <p className='mb-0'>8-October, 2021  | 13:53</p> */}
                                             <p className='mb-0'>{row.date}</p>
                                         </div>
@@ -59,7 +59,7 @@ function Home() {
                                             </Col>
                                         </Row>
                                         <div>
-                                            <NavLink to='/details'>
+                                            <NavLink to={`/details/${row.oid}`}>
                                                 <Button className='text-uppercase'
                                                     style={{ float: 'right', background: 'white', border: 'none', boxShadow: 'none', color: '#106894', fontWeight: '600' }}>
                                                     more details

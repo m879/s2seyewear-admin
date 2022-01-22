@@ -18,7 +18,7 @@ export default function AllRoute() {
            <Switch>
                <PrivateRoute path="/dashboard"   component={Dashboard} />
                <PrivateRoute path="/orders"   component={AllOrders} />
-               <PrivateRoute path="/details"   component={OrderDetails} />
+               <PrivateRoute path="/details/:id"   component={OrderDetails} />
                <PrivateRoute path="/products"   component={ManageProducts} />
                <PrivateRoute path="/category"   component={AddCategory} />
                <PrivateRoute path="/users"   component={AllUsers} />

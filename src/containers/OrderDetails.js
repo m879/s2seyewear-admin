@@ -1,9 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import './style.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink ,useParams} from 'react-router-dom';
 import { Container, Row, Col, Card,Button,Table,Form,Spinner} from 'react-bootstrap';
 import {GetOrderDetails,updateStatus} from '../actions/API';
 
+import AlertComponent from '../components/Alert';
 
 const data = [
     {},
@@ -12,9 +13,16 @@ const data = [
 
 function Home() {
 
+    
+    const id = useParams();
+    const oid=id.id;
 
     const [orderDetail,setOrderDetail]=useState([]);
     const [products,setProducts]=useState([]);
+
+    const [openAlert, setOpenAlert] = useState(false);
+    const [errMsg, setErrMsg] = useState(false);
+
 
     const [loading, setLoading] = useState(true);
 
@@ -22,7 +30,7 @@ function Home() {
     // console.log("status",status);
 
     useEffect(() => {
-        GetOrderDetails().then((data)=>{
+        GetOrderDetails(oid).then((data)=>{
             if(data){
                 setOrderDetail(data.order);
                 setProducts(data.order.products);
@@ -33,7 +41,12 @@ function Home() {
 
     const handleUpdateStatus=(id)=>{
         console.log("handleUpdateStatus",status)
-        updateStatus(id,status);
+        updateStatus(id,status).then((res)=>{
+            if(res){
+                setOpenAlert(true);
+                setErrMsg("Status updated successfully");
+            }
+        });
     }
 
 
@@ -106,11 +119,12 @@ function Home() {
                             </tbody>
                     </Table>
                     <div className='my-4'>
+                        {
+                        openAlert &&
+                            <AlertComponent alertStatus={openAlert} alertMsg={errMsg} status={setOpenAlert}/>
+                        }
                         <Row>
                             <Col lg={8} xs={6} className='my-4'>
-                                <div>
-                                  <p><strong>Status : </strong>{orderDetail.order_status}</p>
-                                </div>
                                 <Form.Select aria-label="Default select example"
                                 onChange={(e)=>setstatus(e.target.value)}>
                                   <option value="On the way">On the way</option>

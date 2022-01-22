@@ -73,7 +73,7 @@ export const GetAllOrder=()=>{
     })
  }
 
- export const GetOrderDetails=()=>{
+ export const GetOrderDetails=(id)=>{
     const config={
         headers: {
             'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ export const GetAllOrder=()=>{
           },
     }
 
-    return axios.get(`${baseURL}/api/get_order_by_id/1`,config)
+    return axios.get(`${baseURL}/api/get_order_by_id/${id}`,config)
     .then((res)=>{
         return res.data;
     })

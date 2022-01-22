@@ -7,6 +7,7 @@ import Img2 from '../assets/upload.png';
 import DeleteImg from '../assets/delete.png';
 import EditImg from '../assets/edit1.png';
 import { GetAllProducts, AddProducts, EditProducts, DeleteProducts } from '../actions/API';
+import AlertComponent from '../components/Alert';
 
 
 const data = [
@@ -20,6 +21,9 @@ const data = [
 ]
 
 function Home() {
+
+    const [openAlert, setOpenAlert] = useState(false);
+    const [errMsg, setErrMsg] = useState(false);
 
     const [show, setShow] = useState(false);
 
@@ -78,7 +82,12 @@ function Home() {
         product_data.append('power_type',power_type);
         product_data.append('filter',filter);
         product_data.append("images", imageUpload);
-        AddProducts(product_data);
+        AddProducts(product_data).then((res)=>{
+            if(res){
+                setOpenAlert(true);
+                setErrMsg("Product Added Successfully");
+            }
+        });
     }
 
     const handleChangeImage = (e) => {
