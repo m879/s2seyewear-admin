@@ -41,14 +41,14 @@ function Home() {
                         <section className='page'>
                             <Row>
                                 {
-                                    data.map((row) => (
+                                    data.map((row,index) => (
                                         <Col lg={4} xs={12} className='my-4'>
                                             <Card className='dashboard-card text-center'>
                                                 <h3 className='heading1 m-0'>{row.total}</h3>
                                                 <h6 className='my-2 text1'>{row.text}</h6>
-                                                <NavLink to={`${row.route}`} style={{textDecoration:'none'}}>
+                                                {/* <NavLink to={`${row.route}`} style={{textDecoration:'none'}}>
                                                     <p className='dashboard-btn mt-2'>VIEW MORE</p>
-                                                </NavLink>
+                                                </NavLink> */}
                                             </Card>
                                         </Col>
                                     ))

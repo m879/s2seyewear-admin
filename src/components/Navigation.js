@@ -12,6 +12,9 @@ function Navigation({ auth, logout }) {
         logout();
     }
 
+    const todayDate=new Date();
+
+
    
     return (
         <div>
@@ -20,7 +23,7 @@ function Navigation({ auth, logout }) {
                     <div className='dashboard-heading text-center' style={{width:'100%'}}>
                         <h3 className='mt-4'>ADMIN PANEL</h3>
                         <h6 className='my-3'>8 JANUARY | SATURDAY</h6>
-                        <p>17:34</p>
+                        <p>{todayDate.getHours()}:{todayDate.getMinutes()}</p>
                     </div>
             </Navbar>
         </div>

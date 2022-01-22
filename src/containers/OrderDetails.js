@@ -19,6 +19,7 @@ function Home() {
     const [loading, setLoading] = useState(true);
 
     const [status, setstatus] = useState('');
+    // console.log("status",status);
 
     useEffect(() => {
         GetOrderDetails().then((data)=>{
@@ -28,7 +29,7 @@ function Home() {
                 setLoading(false);
             }
         })
-    }, [])
+    }, [status])
 
     const handleUpdateStatus=(id)=>{
         console.log("handleUpdateStatus",status)
@@ -54,7 +55,7 @@ function Home() {
                     <Col lg={1} xs={12}></Col>
                     <Col lg={3}>
                         <p>Buyer's Name</p>
-                        <p><strong>Rishabh Rawat</strong></p>
+                        <p><strong>{orderDetail.Buyers_name}</strong></p>
                     </Col>
                     <Col lg={3}>
                         <p>Purchsed worth</p>
@@ -107,9 +108,11 @@ function Home() {
                     <div className='my-4'>
                         <Row>
                             <Col lg={8} xs={6} className='my-4'>
+                                <div>
+                                  <p><strong>Status : </strong>{orderDetail.order_status}</p>
+                                </div>
                                 <Form.Select aria-label="Default select example"
                                 onChange={(e)=>setstatus(e.target.value)}>
-                                  <option>{orderDetail.order_status}</option>
                                   <option value="On the way">On the way</option>
                                   <option value="Delivered">Delivered</option>
                                   <option value="Canceled">Canceled</option>
