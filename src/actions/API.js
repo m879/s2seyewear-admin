@@ -179,4 +179,59 @@ export const DeleteProducts=(id)=>{
 }
 
 
+export const GetAllCoupon=()=>{
 
+    const config={
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${Token()}`
+          },
+    }
+
+    return axios.get(`${baseURL}/api/admin/coupons`,config)
+    .then((res)=>{
+        return res.data;
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+}
+
+
+export const AddCoupon=(data)=>{
+
+    const config={
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${Token()}`
+          },
+    }
+
+    return axios.post(`${baseURL}/api/admin/coupons`,data,config)
+    .then((res)=>{
+        return res.data;
+    })
+    .catch((err)=>{
+        console.log(err);
+        return false;
+    })
+}
+
+
+export const DeleteCoupon=(data)=>{
+    
+    const config={
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${Token()}`
+          },
+    }
+
+    return axios.delete(`${baseURL}/api/admin/coupons?coupon_id=${data}`,config)
+    .then((res)=>{
+        return res.data;
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+}

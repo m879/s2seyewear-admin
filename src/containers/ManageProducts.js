@@ -203,7 +203,15 @@ function Home() {
                         </Form.Group>
                     </Col>
                     <Col lg={6} xs={12}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Top Selling</Form.Label>
+                            <Form.Select aria-label="Default select example"
+                            name="top_selling" value={top_selling} onChange={(e)=>onChange(e)}> 
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </Form.Select>
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Category</Form.Label>
                             <Form.Select aria-label="Default select example" 
                             name="cid" value={cid} onChange={(e)=>onChange(e)}>
@@ -214,41 +222,41 @@ function Home() {
                                 <option value="1">Accessories</option>
                             </Form.Select>
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Top Selling</Form.Label>
-                            <Form.Select aria-label="Default select example"
-                            name="top_selling" value={top_selling} onChange={(e)=>onChange(e)}> 
-                                <option value="1">Yes</option>
-                                <option value="0">No</option>
-                            </Form.Select>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Filter</Form.Label>
-                            <Form.Select aria-label="Default select example"
-                            name="filter" value={filter} onChange={(e)=>onChange(e)}>
-                                <option value="solution">Contact Lense Solution</option>
-                                <option value="Other Accessories">Other Accessories</option>
-                            </Form.Select>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Power Type</Form.Label>
-                            <Form.Select aria-label="Default select example"
-                            name="power_type" value={power_type} onChange={(e)=>onChange(e)}>
-                                <option value="Fashion lense">Fashion (zero power contact lenses)</option>
-                                <option value="powered">Powered contact lenses</option>
-                                <option value="solution">Contact lens solution</option>
-                            </Form.Select>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Power</Form.Label>
-                            <Form.Select aria-label="Default select example"
-                            name="Power" value={Power} onChange={(e)=>onChange(e)}>
-                                <option value="SH-">-SPH power(only sph)</option>
-                                <option value="SH+">+SPH power(only sph)</option>
-                                <option value="Cyl">Cyl power (cyl>0.75)(only cyl)</option>
-                                <option value="Toric">Toric power(sph+cyl)</option>
-                            </Form.Select>
-                        </Form.Group>
+                        {
+                            cid==1 &&
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Filter</Form.Label>
+                                <Form.Select aria-label="Default select example"
+                                name="filter" value={filter} onChange={(e)=>onChange(e)}>
+                                    <option value="solution">Contact Lense Solution</option>
+                                    <option value="Other Accessories">Other Accessories</option>
+                                </Form.Select>
+                            </Form.Group>
+                        }
+                        {
+                            cid==4 && 
+                            <>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Label>Power Type</Form.Label>
+                                    <Form.Select aria-label="Default select example"
+                                    name="power_type" value={power_type} onChange={(e)=>onChange(e)}>
+                                        <option value="Fashion lense">Fashion (zero power contact lenses)</option>
+                                        <option value="powered">Powered contact lenses</option>
+                                        <option value="solution">Contact lens solution</option>
+                                    </Form.Select>
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Label>Power</Form.Label>
+                                    <Form.Select aria-label="Default select example"
+                                    name="Power" value={Power} onChange={(e)=>onChange(e)}>
+                                        <option value="SH-">-SPH power(only sph)</option>
+                                        <option value="SH+">+SPH power(only sph)</option>
+                                        <option value="Cyl">Cyl power (cyl>0.75)(only cyl)</option>
+                                        <option value="Toric">Toric power(sph+cyl)</option>
+                                    </Form.Select>
+                                </Form.Group>     
+                            </>
+                        }
                     </Col>
                 </Row>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">

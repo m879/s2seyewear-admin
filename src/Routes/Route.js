@@ -11,6 +11,7 @@ import ManageProducts from '../containers/ManageProducts';
 import AddCategory from '../containers/AddCategory';
 import AllUsers from '../containers/AllUsers'
 
+import ManageCoupon from '../containers/ManageCoupon';
 
 export default function AllRoute() {
     return (
@@ -22,6 +23,7 @@ export default function AllRoute() {
                <PrivateRoute path="/products"   component={ManageProducts} />
                <PrivateRoute path="/category"   component={AddCategory} />
                <PrivateRoute path="/users"   component={AllUsers} />
+               <PrivateRoute path="/coupon"   component={ManageCoupon} />
            </Switch>
         </div>
     )

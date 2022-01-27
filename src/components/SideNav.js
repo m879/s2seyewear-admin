@@ -12,7 +12,8 @@ const data=[
     {image:Img1,text:"Stats",route:'/dashboard'},
     {image:Img2,text:"All Orders",route:'/orders'},
     {image:Img3,text:"All Users",route:'/users'},
-    {image:Img4,text:"Manage Items",route:'/products'}
+    {image:Img4,text:"Manage Items",route:'/products'},
+    {image:Img4,text:"Manage Coupon",route:'/coupon'}
 ]
 
 function SideNav() {
