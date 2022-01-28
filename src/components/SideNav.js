@@ -4,6 +4,7 @@ import Img1 from '../assets/nav1.png';
 import Img2 from '../assets/nav2.png';
 import Img3 from '../assets/nav3.png';
 import Img4 from '../assets/nav4.png';
+import Img5 from '../assets/discount.png';
 import Icon from '../assets/icon.png';
 
 import { NavLink } from 'react-router-dom';
@@ -13,7 +14,7 @@ const data=[
     {image:Img2,text:"All Orders",route:'/orders'},
     {image:Img3,text:"All Users",route:'/users'},
     {image:Img4,text:"Manage Items",route:'/products'},
-    {image:Img4,text:"Manage Coupon",route:'/coupon'}
+    {image:Img5,text:"Manage Coupon",route:'/coupon'}
 ]
 
 function SideNav() {
@@ -27,7 +28,7 @@ function SideNav() {
                data.map((row)=>(
                    <NavLink to={`${row.route}`}style={{textDecoration:'none'}}>
                         <div className='sideNav-Item'>
-                            <img src={row.image}></img>
+                            <img src={row.image} style={{height:'30px',width:'30px'}}></img>
                             <p className='text-white my-2'>{row.text}</p>
                         </div>
                    </NavLink>
