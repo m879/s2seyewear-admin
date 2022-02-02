@@ -49,6 +49,9 @@ function Home() {
         });
     }
 
+    const  capitalizeFirstLetter=(string)=> {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
 
     return (
@@ -84,7 +87,10 @@ function Home() {
                     <Col lg={3} xs={12}>
                         <p>Purchsed worth : <strong>₹ {orderDetail.total_price}</strong></p>
                     </Col>
-                    <Col lg={6} xs={12}></Col>
+                    <Col lg={6} xs={12}>
+                        {orderDetail.coupon_discount && <p>Coupon Applied : <strong>{orderDetail.coupon_discount.toUpperCase()}</strong></p>
+                        }
+                    </Col>
                 </Row>
                 <Table responsive className='font-weight-bold' style={{fontWeight:'bold'}}>
                         <thead>
@@ -106,6 +112,18 @@ function Home() {
                                                     style={{ width: '80px', height: '80px' }}></img>
                                                     <div className='mx-3' style={{width:'200px'}}>
                                                         <p className='product-feature-text'>{row.product_details.name}</p>
+                                                       { row.order_details.power && <p className='product-feature-text m-0'>
+                                                           Power : { capitalizeFirstLetter(row.order_details.power)}
+                                                        </p>}
+                                                       { row.order_details.power_type && <p className='product-feature-text m-0'>
+                                                           Power Type: {capitalizeFirstLetter(row.order_details.power_type)}
+                                                        </p>}
+                                                       {
+                                                        row.order_details.prescription &&
+                                                        <a href={row.order_details.prescription}  target='_blank'>
+                                                           <p className='product-feature-text m-0'>Prescription</p>
+                                                        </a>
+                                                        }
                                                     </div>
                                                 </div>
                                             </td>

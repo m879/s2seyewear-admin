@@ -88,6 +88,19 @@ function Home() {
                 setErrMsg("Product Added Successfully");
             }
         });
+        setformData({
+            name:'',
+            after_sale_price:'',
+            actual_price:'',
+            in_stock:'',
+            description:'',
+            Gender:'',
+            Power:'',
+            cid:'',
+            top_selling:'',
+            power_type:'',
+            filter:''
+        });
     }
 
     const handleChangeImage = (e) => {
@@ -312,6 +325,9 @@ function Home() {
                     <section>
 
                         <div style={{ marginTop: '50px' }}>
+                            {
+                                openAlert && <AlertComponent alertStatus={openAlert} alertMsg={errMsg} status={setOpenAlert}/>
+                            }
                             {productForm}
                             <div className='text-center'>
                                 <Button variant="primary" onClick={()=>handleAddProduct()}
