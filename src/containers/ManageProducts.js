@@ -50,10 +50,10 @@ function ManageProduct() {
         actual_price:'',
         in_stock:'',
         description:'',
-        Gender:'',
+        Gender:'Men',
         Power:'',
         cid:'',
-        top_selling:'',
+        top_selling:1,
         power_type:'',
         filter:''
     });
