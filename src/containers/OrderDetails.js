@@ -108,7 +108,7 @@ function Home() {
                                         <tr style={{borderBottom:'1px solid black'}}>
                                             <td className='p-3'>
                                                 <div style={{ display: 'flex',alignItems:'center' }}>
-                                                    <img src={row.product_details.image_urls} 
+                                                    <img src={row.product_details.image_urls[0]} 
                                                     style={{ width: '80px', height: '80px' }}></img>
                                                     <div className='mx-3' style={{width:'200px'}}>
                                                         <p className='product-feature-text'>{row.product_details.name}</p>

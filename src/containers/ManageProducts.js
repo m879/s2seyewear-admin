@@ -91,21 +91,23 @@ function ManageProduct() {
             if(res){
                 setOpenAlert(true);
                 setErrMsg("Product Added Successfully");
+                setformData({
+                    name:'',
+                    after_sale_price:'',
+                    actual_price:'',
+                    in_stock:'',
+                    description:'',
+                    Gender:'',
+                    Power:'',
+                    cid:'',
+                    top_selling:'',
+                    power_type:'',
+                    filter:''
+                });
+                setImageUpload([]);
             }
         });
-        setformData({
-            name:'',
-            after_sale_price:'',
-            actual_price:'',
-            in_stock:'',
-            description:'',
-            Gender:'',
-            Power:'',
-            cid:'',
-            top_selling:'',
-            power_type:'',
-            filter:''
-        });
+       
     }
 
     const handleChangeImage = (e) => {
@@ -352,7 +354,7 @@ function ManageProduct() {
                                         <Col lg={3} xs={12} className='mt-4'>
                                             <Card style={{ width: '100%', boxShadow: '0px 0px 44px -14px rgba(0, 0, 0, 0.25)' }}>
                                                 <div>
-                                                <Card.Img variant="top" src={row.image_urls} style={{height:'150px'}}/>
+                                                <Card.Img variant="top" src={row.image_urls[0]} style={{height:'150px'}}/>
                                                 </div>
                                                 <Card.Body>
                                                     <Card.Text className='text3'>{row.name}</Card.Text>
