@@ -20,7 +20,7 @@ const data = [
     {},
 ]
 
-function Home() {
+function ManageProduct() {
 
     const [openAlert, setOpenAlert] = useState(false);
     const [errMsg, setErrMsg] = useState(false);
@@ -81,7 +81,12 @@ function Home() {
         product_data.append('top_selling',top_selling);
         product_data.append('power_type',power_type);
         product_data.append('filter',filter);
-        product_data.append("images", imageUpload);
+        // product_data.append("images", imageSend);
+        // product_data.append("images", imageUpload);
+        for(let i=0;i<imageUpload.length;i++){
+            product_data.append('images',imageUpload[i]);
+        }
+
         AddProducts(product_data).then((res)=>{
             if(res){
                 setOpenAlert(true);
@@ -112,7 +117,7 @@ function Home() {
         if (allfiles.length > 0) {
             setImageUpload(allfiles);
         }
-        console.log("allfiles", allfiles);
+        console.log("allfiles",  e.target.files);
     }
 
 
@@ -386,4 +391,4 @@ function Home() {
         </div>
     )
 }
-export default Home;
+export default ManageProduct;

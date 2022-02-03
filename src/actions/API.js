@@ -132,6 +132,7 @@ export const AddProducts=(data)=>{
             'Authorization': `Bearer ${Token()}`
           },
     }
+    // let URL='https://29b9-2401-4900-1c36-6d0b-e245-e5ed-ed7a-90a.ngrok.io'
 
     return axios.post(`${baseURL}/api/addProduct/`,data,config)
     .then((res)=>{
