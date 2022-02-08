@@ -51,11 +51,11 @@ function ManageProduct() {
         in_stock:'',
         description:'',
         Gender:'Men',
-        Power:'',
-        cid:'',
+        Power:'SH-',
+        cid:'2',
         top_selling:1,
-        power_type:'',
-        filter:''
+        power_type:'faishon',
+        filter:'solution'
     });
 
     const {name,after_sale_price,actual_price,in_stock,description,
@@ -76,11 +76,15 @@ function ManageProduct() {
         product_data.append('in_stock',parseInt(in_stock));
         product_data.append('description',description);
         product_data.append('Gender',Gender);
-        product_data.append('Power',Power);
         product_data.append('cid',cid);
         product_data.append('top_selling',top_selling);
         product_data.append('power_type',power_type);
         product_data.append('filter',filter);
+        if(power_type=='powered'){
+            product_data.append('Power',Power);
+        }else{
+            product_data.append('Power','');
+        }
         // product_data.append("images", imageSend);
         // product_data.append("images", imageUpload);
         for(let i=0;i<imageUpload.length;i++){
@@ -105,6 +109,9 @@ function ManageProduct() {
                     filter:''
                 });
                 setImageUpload([]);
+            }else{
+                setOpenAlert(true);
+                setErrMsg("Server Error. Try Again.");
             }
         });
        
@@ -216,6 +223,7 @@ function ManageProduct() {
                             <Form.Label>Gender</Form.Label>
                             <Form.Select aria-label="Default select example" 
                             name="Gender" value={Gender} onChange={(e)=>onChange(e)}>
+                                <option value="Men">Select</option>
                                 <option value="Men">Male</option>
                                 <option value="Women">Female</option>
                                 <option value="Kid">Kids</option>
@@ -235,6 +243,7 @@ function ManageProduct() {
                             <Form.Label>Category</Form.Label>
                             <Form.Select aria-label="Default select example" 
                             name="cid" value={cid} onChange={(e)=>onChange(e)}>
+                                <option value="2">Select</option>
                                 <option value="2">Eye Wear</option>
                                 <option value="5">Sun Shades</option>
                                 <option value="4">Contact Lenses</option>
@@ -244,37 +253,53 @@ function ManageProduct() {
                         </Form.Group>
                         {
                             cid==1 &&
+                            // value="solution"
+                            // value="accessories"
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Filter</Form.Label>
                                 <Form.Select aria-label="Default select example"
                                 name="filter" value={filter} onChange={(e)=>onChange(e)}>
+                                    <option value="solution">Select</option>
                                     <option value="solution">Contact Lense Solution</option>
-                                    <option value="Other Accessories">Other Accessories</option>
+                                    <option value="accessories">Other Accessories</option>
                                 </Form.Select>
                             </Form.Group>
                         }
                         {
                             cid==4 && 
                             <>
+                             {/* value="faishon"  */}
+                             {/* value="powered" */}
+                             {/* value="solution" */}
+
+                             {/* value="SH-"   */}
+                             {/* value="SH+"   */}
+                             {/* value="Cyl"   */}
+                             {/* value="Toric" */}
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Power Type</Form.Label>
                                     <Form.Select aria-label="Default select example"
                                     name="power_type" value={power_type} onChange={(e)=>onChange(e)}>
-                                        <option value="Fashion lense">Fashion (zero power contact lenses)</option>
+                                        <option value="faishon">Select</option>
+                                        <option value="faishon">Fashion (zero power contact lenses)</option>
                                         <option value="powered">Powered contact lenses</option>
                                         <option value="solution">Contact lens solution</option>
                                     </Form.Select>
                                 </Form.Group>
+                                {
+                                power_type=='powered' &&
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Power</Form.Label>
                                     <Form.Select aria-label="Default select example"
                                     name="Power" value={Power} onChange={(e)=>onChange(e)}>
+                                        <option value="SH-">Select</option>
                                         <option value="SH-">-SPH power(only sph)</option>
                                         <option value="SH+">+SPH power(only sph)</option>
                                         <option value="Cyl">Cyl power (cyl>0.75)(only cyl)</option>
                                         <option value="Toric">Toric power(sph+cyl)</option>
                                     </Form.Select>
                                 </Form.Group>     
+                                }
                             </>
                         }
                     </Col>
