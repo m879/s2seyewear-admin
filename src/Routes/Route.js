@@ -12,6 +12,7 @@ import AddCategory from '../containers/AddCategory';
 import AllUsers from '../containers/AllUsers'
 
 import ManageCoupon from '../containers/ManageCoupon';
+import ManageBanner from '../containers/ManageBanner';
 
 export default function AllRoute() {
     return (
@@ -24,6 +25,7 @@ export default function AllRoute() {
                <PrivateRoute path="/category"   component={AddCategory} />
                <PrivateRoute path="/users"   component={AllUsers} />
                <PrivateRoute path="/coupon"   component={ManageCoupon} />
+               <PrivateRoute path="/banner"   component={ManageBanner} />
            </Switch>
         </div>
     )

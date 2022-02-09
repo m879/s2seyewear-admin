@@ -13,8 +13,9 @@ const data=[
     {image:Img1,text:"Stats",route:'/dashboard'},
     {image:Img2,text:"All Orders",route:'/orders'},
     {image:Img3,text:"All Users",route:'/users'},
+    {image:Img5,text:"Manage Banner",route:'/banner'},
     {image:Img4,text:"Manage Items",route:'/products'},
-    {image:Img5,text:"Manage Coupon",route:'/coupon'}
+    {image:Img5,text:"Manage Coupon",route:'/coupon'},
 ]
 
 function SideNav() {
@@ -27,9 +28,9 @@ function SideNav() {
            {
                data.map((row)=>(
                    <NavLink to={`${row.route}`}style={{textDecoration:'none'}}>
-                        <div className='sideNav-Item'>
+                        <div className='sideNav-Item px-3'>
                             <img src={row.image} style={{height:'30px',width:'30px'}}></img>
-                            <p className='text-white my-2'>{row.text}</p>
+                            <p className='text-white my-2 mx-2' style={{whiteSpace:'nowrap'}}>{row.text}</p>
                         </div>
                    </NavLink>
                ))

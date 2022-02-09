@@ -3,6 +3,56 @@ import {baseURL } from '../config/config';
 import { Token } from './auth';
 
 
+export const AddBanner=(data)=>{
+    const config={
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': `Bearer ${Token()}`
+          },
+    }
+    return axios.post(`${baseURL}/api/addbanner`,data,config)
+    .then((res)=>{
+        return res.data;
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+}
+
+export const GetAllBanner=()=>{
+    const config={
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${Token()}`
+          },
+    }
+    return axios.get(`${baseURL}/api/getbanners`,config)
+    .then((res)=>{
+        return res.data;
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+}
+
+
+export const DeleteBanner=(id)=>{
+    const config={
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${Token()}`
+          },
+    }
+    return axios.delete(`${baseURL}/api/deleteBanner/${id}`,config)
+    .then((res)=>{
+        return res.data;
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+}
+
+
 export const DashboardData=()=>{
 //    console.log("Dashboard = ",Token());
     const config={

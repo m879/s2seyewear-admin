@@ -13,7 +13,9 @@
 }
 .sideNav-Item{
    text-align: center;
-   margin-top: 5vh;    
+   margin-top: 5vh;  
+   display: flex;
+   align-items: center;  
 }
 @media screen and (max-width:480px) {
     .sidenav-container{
@@ -29,6 +31,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        overflow-x: scroll;
     }
     .sideNav-Item{
         margin-top: 10px;    
