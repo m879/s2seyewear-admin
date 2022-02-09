@@ -5,6 +5,8 @@ import Img2 from '../assets/nav2.png';
 import Img3 from '../assets/nav3.png';
 import Img4 from '../assets/nav4.png';
 import Img5 from '../assets/discount.png';
+import Img6 from '../assets/nav5.png';
+
 import Icon from '../assets/icon.png';
 
 import { NavLink } from 'react-router-dom';
@@ -13,7 +15,7 @@ const data=[
     {image:Img1,text:"Stats",route:'/dashboard'},
     {image:Img2,text:"All Orders",route:'/orders'},
     {image:Img3,text:"All Users",route:'/users'},
-    {image:Img5,text:"Manage Banner",route:'/banner'},
+    {image:Img6,text:"Manage Banner",route:'/banner'},
     {image:Img4,text:"Manage Items",route:'/products'},
     {image:Img5,text:"Manage Coupon",route:'/coupon'},
 ]
