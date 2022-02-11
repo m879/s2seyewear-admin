@@ -223,7 +223,7 @@ function ManageProduct() {
                             <Form.Label>Gender</Form.Label>
                             <Form.Select aria-label="Default select example" 
                             name="Gender" value={Gender} onChange={(e)=>onChange(e)}>
-                                <option value="Men">Select</option>
+                                <option value="">Select</option>
                                 <option value="Men">Male</option>
                                 <option value="Women">Female</option>
                                 <option value="Kid">Kids</option>
@@ -243,7 +243,7 @@ function ManageProduct() {
                             <Form.Label>Category</Form.Label>
                             <Form.Select aria-label="Default select example" 
                             name="cid" value={cid} onChange={(e)=>onChange(e)}>
-                                <option value="2">Select</option>
+                                <option value="">Select</option>
                                 <option value="2">Eye Wear</option>
                                 <option value="5">Sun Shades</option>
                                 <option value="4">Contact Lenses</option>
@@ -259,7 +259,7 @@ function ManageProduct() {
                                 <Form.Label>Filter</Form.Label>
                                 <Form.Select aria-label="Default select example"
                                 name="filter" value={filter} onChange={(e)=>onChange(e)}>
-                                    <option value="solution">Select</option>
+                                    <option value="">Select</option>
                                     <option value="solution">Contact Lense Solution</option>
                                     <option value="accessories">Other Accessories</option>
                                 </Form.Select>
@@ -280,7 +280,7 @@ function ManageProduct() {
                                     <Form.Label>Power Type</Form.Label>
                                     <Form.Select aria-label="Default select example"
                                     name="power_type" value={power_type} onChange={(e)=>onChange(e)}>
-                                        <option value="faishon">Select</option>
+                                        <option value="">Select</option>
                                         <option value="faishon">Fashion (zero power contact lenses)</option>
                                         <option value="powered">Powered contact lenses</option>
                                         <option value="solution">Contact lens solution</option>
@@ -292,7 +292,7 @@ function ManageProduct() {
                                     <Form.Label>Power</Form.Label>
                                     <Form.Select aria-label="Default select example"
                                     name="Power" value={Power} onChange={(e)=>onChange(e)}>
-                                        <option value="SH-">Select</option>
+                                        <option value="">Select</option>
                                         <option value="SH-">-SPH power(only sph)</option>
                                         <option value="SH+">+SPH power(only sph)</option>
                                         <option value="Cyl">Cyl power (cyl>0.75)(only cyl)</option>
