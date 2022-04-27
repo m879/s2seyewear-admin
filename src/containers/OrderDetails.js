@@ -26,22 +26,23 @@ function Home() {
 
     const [loading, setLoading] = useState(true);
 
-    const [status, setstatus] = useState('');
-    // console.log("status",status);
+    const [orderStatus, setOrderStatus] = useState('');
+    console.log("order_status status",orderStatus);
 
     useEffect(() => {
         GetOrderDetails(oid).then((data)=>{
             if(data){
                 setOrderDetail(data.order);
+                setOrderStatus(data.order.order_status);
                 setProducts(data.order.products);
                 setLoading(false);
             }
         })
-    }, [status])
+    }, []);
 
     const handleUpdateStatus=(id)=>{
-        console.log("handleUpdateStatus",status)
-        updateStatus(id,status).then((res)=>{
+        console.log("handleUpdateStatus",orderStatus,id)
+        updateStatus(id,orderStatus).then((res)=>{
             if(res){
                 setOpenAlert(true);
                 setErrMsg("Status updated successfully");
@@ -144,14 +145,15 @@ function Home() {
                         <Row>
                             <Col lg={8} xs={6} className='my-4'>
                                 <Form.Select aria-label="Default select example"
-                                onChange={(e)=>setstatus(e.target.value)}>
-                                  <option value="On the way">On the way</option>
-                                  <option value="Delivered">Delivered</option>
-                                  <option value="Canceled">Canceled</option>
+                                onChange={(e)=>setOrderStatus(e.target.value)} value={orderStatus} name="orderStatus">
+                                  <option value="on the way">On the way</option>
+                                  <option value="delivered">Delivered</option>
+                                  <option value="underprocess">Underprocess</option>
+                                  <option value="canceled">Canceled</option>
                                 </Form.Select>
                             </Col>
                             <Col lg={4} xs={6} className='my-4'>
-                                <Button className='btn1 border-0'  onClick={()=>handleUpdateStatus(orderDetail.uid)}
+                                <Button className='btn1 border-0'  onClick={()=>handleUpdateStatus(orderDetail.oid)}
                                 style={{background: '#CC7549',width:'100%'}}>Update Status</Button>
                             </Col>
                         </Row>

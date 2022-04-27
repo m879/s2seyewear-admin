@@ -35,13 +35,18 @@ function ManageProduct() {
 
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+
+    const handleGetAllProducts=()=>{
         GetAllProducts().then((data) => {
             if (data) {
                 setallProducts(data.Products);
                 setLoading(false);
             }
-        })
+        });
+    }
+
+    useEffect(() => {
+        handleGetAllProducts();
     }, [])
 
     const [formData, setformData] = useState({
@@ -109,6 +114,7 @@ function ManageProduct() {
                     filter:''
                 });
                 setImageUpload([]);
+                handleGetAllProducts();
             }else{
                 setOpenAlert(true);
                 setErrMsg("Server Error. Try Again.");
